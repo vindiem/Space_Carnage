@@ -18,8 +18,15 @@ public class Player : MonoBehaviour
     public GameObject BulletPrefab;  
     public Transform StrikePoint;
 
+    private AudioSource soundSource;
+    public AudioClip damageSound;
+    public AudioClip shotSound;
+
     private void Start()
     {
+        soundSource = GameObject.FindAnyObjectByType<AudioSource>();
+
+        PlayerPrefs.SetInt("Score", 0);
         hpbar = GameObject.FindGameObjectWithTag("HpBar").GetComponent<HpBar>();
     }
 
@@ -38,6 +45,7 @@ public class Player : MonoBehaviour
         // Смена направления при нажатии кнопки мыши
         if (Input.GetMouseButtonDown(0))
         {
+            soundSource.PlayOneShot(shotSound);
             isRotatingRight = !isRotatingRight;
             Instantiate(BulletPrefab, StrikePoint.position, transform.rotation);
         }
@@ -52,6 +60,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            soundSource.PlayOneShot(damageSound);
             hpbar.fill -= 0.17f;
             currentHealth -= 0.5f;
         }

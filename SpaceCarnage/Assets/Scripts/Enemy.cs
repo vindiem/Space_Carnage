@@ -15,8 +15,13 @@ public class Enemy : MonoBehaviour
 
     public Transform target; // Цель (игрок)
 
+    private AudioSource soundSource;
+    public AudioClip scorePlus;
+
     private void Start()
     {
+        soundSource = GameObject.FindAnyObjectByType<AudioSource>();
+
         scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<Scoremanager>();
         target = GameObject.FindGameObjectWithTag("Player").transform; // Предполагается, что у игрока есть тег "Player"
     }
@@ -24,9 +29,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-
-
-
         if (target != null)
         {
 
@@ -58,6 +60,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet") == true)
         {
+            soundSource.PlayOneShot(scorePlus);
             scoreManager.EnemyKilled();
             Destroy(gameObject);
         }

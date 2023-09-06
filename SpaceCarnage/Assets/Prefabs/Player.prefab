@@ -27,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403101609460918485}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009565711, y: 0.018382668, z: 0.009990345}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
@@ -34,7 +35,6 @@ Transform:
   m_Children:
   - {fileID: 2233031696509118908}
   m_Father: {fileID: 6720849603505202351}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2213880416688297520
 SpriteRenderer:
@@ -104,6 +104,8 @@ MonoBehaviour:
   currentHealth: 3
   BulletPrefab: {fileID: 3513458025482211573, guid: 89f52841f54b0b84aa682802b8b06e66, type: 3}
   StrikePoint: {fileID: 2233031696509118908}
+  damageSound: {fileID: 8300000, guid: a93e958a86ed1ae41b4f6d9de93acc50, type: 3}
+  shotSound: {fileID: 8300000, guid: e634288be82af46499b4edb7629c0b27, type: 3}
 --- !u!50 &7165685560975655861
 Rigidbody2D:
   serializedVersion: 4
@@ -189,13 +191,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2179569272047929343}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06, y: 3.04, z: -0.14084274}
   m_LocalScale: {x: 3.333333, y: 3.333333, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9067352927045607650}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5299739815040547237
 GameObject:
@@ -220,6 +222,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5299739815040547237}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -227,5 +230,4 @@ Transform:
   m_Children:
   - {fileID: 9067352927045607650}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
